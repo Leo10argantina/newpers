@@ -19,3 +19,28 @@ function sendMail(params){
 
 
 }
+$("#formvalidation").validate({
+
+    rules:{
+      name:{
+        minlength:4
+      },
+      email:{
+        email:true
+      }
+    },
+    messages: {
+      name:{
+        required: "Please enter your name",
+        minlength: "Name at least 4 characters"
+      },
+      email:"Please enter your email",
+      subject:"Please enter your subject",
+      message:"Please type your message"
+    },
+  
+  
+    submitHandler: function(form) {
+      form.submit();
+    }
+   });
